@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // Chemin vers le fichier
-const filePath = 'data.txt';
+const filePath = 'C:\\Users\\b13im\\Downloads\\data.txt';
 
 // Lecture du fichier de manière asynchrone
 fs.readFile(filePath, 'utf8', (err, data) => {
