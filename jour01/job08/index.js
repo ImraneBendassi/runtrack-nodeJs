@@ -1,16 +1,16 @@
 const fs = require('fs');
 
-// Chemin vers le fichier data.txt
-const filePath = 'C:\\Users\\b13im\\Downloads\\data.txt';
+// Chemin vers le fichier
+const filePath = 'data.txt';
 
-// Nouveau contenu à écrire dans le fichier
-const newContent = "Je manipule les fichiers avec un module node !";
-
-// Écriture du nouveau contenu dans le fichier
-fs.writeFile(filePath, newContent, (err) => {
+// Lecture du fichier de manière asynchrone
+fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
-    console.error("Erreur lors de la modification du fichier:", err);
+    console.error("Erreur lors de la lecture du fichier:", err);
     return;
   }
-  console.log("Le contenu du fichier a été modifié avec succès !");
+  // Affichage du contenu du fichier
+  console.log("Contenu du fichier:");
+  console.log(data);
 });
+
