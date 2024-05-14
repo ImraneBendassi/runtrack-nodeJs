@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // Chemin du fichier à lire
-const filePath = 'data.txt';
+const filePath = 'C:\\Users\\b13im\\Downloads\\data.txt';
 
 // Lecture synchrone du fichier
 try {
