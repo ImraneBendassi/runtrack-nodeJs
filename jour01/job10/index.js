@@ -1,20 +1,27 @@
-const fs = require('fs');
+const { URL } = require('url');
 
+// Définition de l'URL initiale
+const URL_STRING = "https://www.google.com&search=nodejs";
 
-const filePath = 'C:\\Users\\b13im\\Downloads\\data.txt';
+// Analyser l'URL
+const parsedUrl = new URL(URL_STRING);
 
+// Récupérer le protocole utilisé
+const protocol = parsedUrl.protocol;
+console.log("Protocole utilisé:", protocol);
 
-fs.readFile(filePath, 'utf8', (err, data) => {
-  if (err) {
-    console.error("Erreur lors de la lecture du fichier:", err);
-    return;
-  }
+// Récupérer le nom d'hôte
+const hostname = parsedUrl.hostname;
+console.log("Nom d'hôte:", hostname);
 
-  
-  let letters = '';
-  for (let i = 0; i < data.length; i += 2) {
-    letters += data[i];
-  }
-  console.log("Lettres sur deux du contenu du fichier:");
-  console.log(letters);
-});
+// Récupérer les paramètres de l'URL
+const searchParams = parsedUrl.searchParams;
+console.log("Paramètres de l'URL:", searchParams.toString());
+
+// Reformater l'URL en une nouvelle URL valide en modifiant le nom d'hôte par "www.laplateforme.io"
+parsedUrl.hostname = "www.laplateforme.io";
+
+// Ajouter à cette nouvelle URL un paramètre
+parsedUrl.searchParams.append("newParam", "valeur");
+
+console.log("Nouvelle URL:", parsedUrl.toString());
