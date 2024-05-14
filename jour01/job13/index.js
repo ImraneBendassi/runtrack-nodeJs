@@ -35,5 +35,5 @@ const server = http.createServer((req, res) => {
 
 // Écouter le serveur sur le port 8888
 server.listen(8888, () => {
-    console.log('Serveur démarré sur le port 8889');
+    console.log('Serveur démarré sur le port 8888');
 });
