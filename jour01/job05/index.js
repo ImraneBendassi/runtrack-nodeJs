@@ -1,20 +1,15 @@
-const fs = require('fs');
+const path = require('path');
 
+const filePath = 'C:\\Users\\b13im\\OneDrive\\Desktop\\jour01\\job05';
 
-const filePath = 'C:\\Users\\b13im\\Downloads\\data.txt';
+// Récupérer le nom du fichier
+const fileName = path.basename(filePath);
+console.log('Nom du fichier:', fileName);
 
+// Récupérer l'extension du fichier
+const fileExtension = path.extname(filePath);
+console.log('Extension du fichier:', fileExtension);
 
-fs.readFile(filePath, 'utf8', (err, data) => {
-  if (err) {
-    console.error("Erreur lors de la lecture du fichier:", err);
-    return;
-  }
-
-  
-  let letters = '';
-  for (let i = 0; i < data.length; i += 2) {
-    letters += data[i];
-  }
-  console.log("Lettres sur deux du contenu du fichier:");
-  console.log(letters);
-});
+// Récupérer le répertoire parent du fichier
+const parentDirectory = path.dirname(filePath);
+console.log('Répertoire parent:', parentDirectory);
