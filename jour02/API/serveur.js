@@ -1,20 +1,28 @@
-// Importation du module Express
-const express = require('express');
 
-// Importation des routes définies dans un fichier séparé (route.js)
+const express = require('express');
 const routes = require('./route.js');
 
-// Fonction pour créer et configurer un serveur Express
 function createServer() {
-  // Création d'une instance d'application Express
   const app = express();
 
-  // Utilisation du middleware pour gérer les données JSON
   app.use(express.json());
-
-  // Montage des routes sous le préfixe '/api'
   app.use('/api', routes);
 
-  // Retourner l'application configurée
   return app;
 }
+
+function startServer(port) {
+  const app = createServer();
+  app.listen(port, (err) => {
+    if (err) {
+      console.error('Erreur lors du démarrage du serveur :', err);
+    } else {
+      console.log(`Serveur en cours d'exécution sur le port ${port}`);
+    }
+  });
+}
+
+module.exports = { createServer, startServer };
+
+
+module.exports = { createServer, startServer };
