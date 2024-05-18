@@ -1,1 +1,9 @@
-Job13
+# Job13
+
+### Lancement de mongo shell
+
+Ouvrez votre terminal ou invite de commande et lancez mongo shell en tapant simplement `mongo`. Cela suppose que MongoDB est correctement installé sur votre système et que le chemin vers l'exécutable mongo shell est configuré dans votre variable d'environnement PATH.
+
+## Récupérer l’ensemble des produits sans leurs id.
+
+Pour  récupérer l’ensemble des produits sans leurs id il faut utiliser la commande suivante "db.product.find({}, { _id: 0 })"
