@@ -1,1 +1,61 @@
-job16
+# Job16
+
+### Lancement de mongo shell
+
+Ouvrez votre terminal ou invite de commande et lancez mongo shell en tapant simplement `mongo`. Cela suppose que MongoDB est correctement installé sur votre système et que le chemin vers l'exécutable mongo shell est configuré dans votre variable d'environnement PATH.
+
+##  Créer une relation entre la collection “product” et “category” à l’aide d’un
+champ nommé “category_id”.
+Modifier et récupérer l’ensemble des produits et leurs catégories.
+
+Pour créer une relation entre la collection “product” et “category” à l’aide d’un
+champ nommé “category_id”.
+Modifier et récupérer l’ensemble des produits et leurs catégories j'ai utlisé cette commande "db.product.updateMany(
+    { name: "chaussure" },
+    { $set: { category_id: ObjectId("66446f17ced7cccd24218522") } }
+    )
+
+db.product.updateMany(
+    { name: "Vêtements" },
+    { $set: { category_id: ObjectId("66446f17ced7cccd24218521") } }
+)
+
+db.product.updateMany(
+    { name: "Accessoires" },
+    { $set: { category_id: ObjectId("66446f17ced7cccd24218523") } }
+    )
+
+db.product.aggregate([
+    {
+        $lookup: {
+        from: "category",
+        localField: "category_id",
+        foreignField: "_id",
+        as: "category_info"
+        }
+    },
+    {
+        $unwind: "$category_info"
+    },
+    {
+        $project: {
+        _id: 1,
+        name: 1,
+        description: 1,
+        price: 1,
+        quantity: 1,
+        category_name: "$category_info.name",
+        category_description: "$category_info.description"
+        }
+    }
+    ]).pretty()
+
+Job 17 :
+
+db.product.aggregate([
+    {
+        $group: {
+        _id: "$category_id",
+        count: { $sum: 1 }
+        }
+    },"
