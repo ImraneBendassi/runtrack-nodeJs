@@ -1,5 +1,6 @@
 # Job06
-## Utilisation de mongo shell pour créer une base de données "shop" et ajouter une collection "product"
+## Utilisation de mongo shell pour  qu'à l’aide d’une ligne de commande, s'affiche l’ensemble des collections de
+votre base de données.
 
 ### Lancement de mongo shell
 
