@@ -1,1 +1,16 @@
-Job12
+# Job12
+
+### Lancement de mongo shell
+
+Ouvrez votre terminal ou invite de commande et lancez mongo shell en tapant simplement `mongo`. Cela suppose que MongoDB est correctement installé sur votre système et que le chemin vers l'exécutable mongo shell est configuré dans votre variable d'environnement PATH.
+
+## Écrire une requête permettant de récupérer les produits ayant un prix
+supérieur à 14.99 euros ou un stock supérieur à 100.
+
+Pour écrire une requête permettant de récupérer les produits ayant un prix
+supérieur à 14.99 euros ou un stock supérieur à 100 j'ai utilisé la commande suivante "db.product.find({
+    $or: [
+        { price: { $gt: 14.99 } },
+        { quantity: { $gt: 100 } }
+    ]
+})"
