@@ -1,1 +1,12 @@
-Job15
+# Job15
+
+### Lancement de mongo shell
+
+Ouvrez votre terminal ou invite de commande et lancez mongo shell en tapant simplement `mongo`. Cela suppose que MongoDB est correctement installé sur votre système et que le chemin vers l'exécutable mongo shell est configuré dans votre variable d'environnement PATH.
+
+## Changer le nom de la catégorie “bébé” en “Vêtements pour enfant”.
+
+Pour changer le nom de la catégorie “bébé” en “Vêtements pour enfant” la commande à utilisé est celle ci "db.category.updateOne(
+    { name: "bébé" },
+    { $set: { name: "Vêtements pour enfant" } }
+)"
