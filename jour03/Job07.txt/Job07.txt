@@ -1,5 +1,5 @@
 # Job07
-## Utilisation de mongo shell pour créer une base de données "shop" et ajouter une collection "product"
+## Récupérez l’ensemble des données de la collection “category”.
 
 ### Lancement de mongo shell
 
