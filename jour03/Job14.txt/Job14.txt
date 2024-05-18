@@ -1,1 +1,9 @@
-Job14
+# Job14
+
+### Lancement de mongo shell
+
+Ouvrez votre terminal ou invite de commande et lancez mongo shell en tapant simplement `mongo`. Cela suppose que MongoDB est correctement installé sur votre système et que le chemin vers l'exécutable mongo shell est configuré dans votre variable d'environnement PATH.
+
+## Récupérer une catégorie à l’aide de son id.
+
+Pour récupérer une catégorie à l’aide de son id j'ai utilisé cette commande "db.product.findOne({ "_id": ObjectId("66446c71ced7cccd2421851e") })"
