@@ -1,1 +1,16 @@
-Job07
+# Job07
+## Utilisation de mongo shell pour créer une base de données "shop" et ajouter une collection "product"
+
+### Lancement de mongo shell
+
+Ouvrez votre terminal ou invite de commande et lancez mongo shell en tapant simplement `mongo`. Cela suppose que MongoDB est correctement installé sur votre système et que le chemin vers l'exécutable mongo shell est configuré dans votre variable d'environnement PATH.
+
+### Affichage de la base de données "category"
+
+pour accéder à la base de données shop utilisez "use shop"
+
+
+ensuite pour verifier les collections utilisez "show collections;"
+
+et pour finir et afficher l'ensemble des collection j'ai utilisé cette commande "db.getCollectionNames()"
+	
