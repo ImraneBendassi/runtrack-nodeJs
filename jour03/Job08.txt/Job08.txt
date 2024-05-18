@@ -1,1 +1,12 @@
-Job08
+# Job08
+
+### Lancement de mongo shell
+
+Ouvrez votre terminal ou invite de commande et lancez mongo shell en tapant simplement `mongo`. Cela suppose que MongoDB est correctement installé sur votre système et que le chemin vers l'exécutable mongo shell est configuré dans votre variable d'environnement PATH.
+
+## Écrire une requête permettant d’afficher seulement deux catégories.
+
+pour ce faire utilisez la commande suivante "db.category.find().limit(2)"
+
+
+
